@@ -1,0 +1,35 @@
+<div class="col-md-4 offset-md-2">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <input type="text" name="nombreP" [(ngModel)]="producto.nombreP" placeholder="Nombre" class="form-control" autofocus>
+                </div>
+            </form>
+            <form>
+                <div class="form-group">
+                    <textarea name="description" [(ngModel)]="producto.description" placeholder="Descripción" rows="2" class="form-control"></textarea>
+                </div>
+            </form>
+            <form>
+                <div class="form-group">
+                    <input type="url" name="image" [(ngModel)]="producto.image" placeholder="Image" class="form-control" autofocus>
+                </div>
+                <button class="btn btn-success btn-block" (click)="edit ? updateProducto() : savenewProduc()">
+                    GUARDAR
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4">
+    <div class="card card-body text-center">
+        <img [src]="producto.image == '' ? '/assets/noimage.png' : producto.image " class="card-img-top">
+        <h3>
+            {{producto.nombreP == '' ? 'Nombre Producto' : producto.nombreP}}
+        </h3>
+        <p>{{producto.description == '' ? 'Escribe tu Descripcion' : producto.description}}</p>
+        <p>{{producto.created_at | date: 'yyyy-MM-dd'}}</p>
+    </div>
+</div>
