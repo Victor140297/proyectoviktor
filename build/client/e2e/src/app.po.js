@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.AppPage = void 0;
 const protractor_1 = require("protractor");
 class AppPage {
     navigateTo() {
